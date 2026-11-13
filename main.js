@@ -791,8 +791,8 @@ function triggerUpdateCheck(isManual = false) {
 		// For builds that don't support auto update check (ZIP/portable/dev), open the latest release link directly
 		const releaseUrl =
 			appState.updateChannel === "beta"
-				? "https://github.com/aandrew-me/ytDownloader/releases"
-				: "https://github.com/aandrew-me/ytDownloader/releases/latest";
+				? "https://github.com/prks135531/Monu-Media-Downloader/releases"
+				: "https://github.com/prks135531/Monu-Media-Downloader/releases/latest";
 		shell.openExternal(releaseUrl);
 		if (appState.mainWindow && !appState.mainWindow.isDestroyed()) {
 			appState.mainWindow.webContents.send("update-not-available", {
