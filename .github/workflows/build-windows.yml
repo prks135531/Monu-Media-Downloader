@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Build Windows installer
-        run: npm run windows
+        run: npm run windows -- --publish=never
 
       - name: Upload installer files
         uses: actions/upload-artifact@v4
