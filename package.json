@@ -4,7 +4,7 @@
 		"systeminformation": "^5.31.7",
 		"yt-dlp-wrap-plus": "^2.5.0"
 	},
-	"name": "ytdownloader",
+	"name": "monu-media-downloader",
 	"version": "4.1.0",
 	"main": "main.js",
 	"scripts": {
@@ -26,12 +26,6 @@
 		"name": "Andrew",
 		"email": "aandrew.me@pm.me"
 	},
-	"publish": {
-		"provider": "github",
-		"owner": "aandrew-me",
-		"repo": "ytDownloader",
-		"private": false
-	},
 	"license": "GPL-3.0",
 	"description": "Download videos and audios from YouTube and many other sites",
 	"devDependencies": {
@@ -41,9 +35,9 @@
 		"typescript": "^5.3.3"
 	},
 	"build": {
-		"productName": "YTDownloader",
-		"appId": "io.github.aandrew_me.ytdn",
-		"copyright": "Copyright © Andrew",
+		"productName": "Monu Media Downloader",
+		"appId": "in.monu.media.downloader",
+		"copyright": "Copyright © Monu",
 		"artifactName": "${productName}.${ext}",
 		"files": [
 			"./resources/**/*",
@@ -127,7 +121,7 @@
 			"oneClick": true,
 			"createDesktopShortcut": true,
 			"createStartMenuShortcut": true,
-			"shortcutName": "YTDownloader"
+			"shortcutName": "Monu Media Downloader"
 		},
 		"appx": {
 			"publisher": "CN=E2D3E7B6-04EB-4CC9-857E-F24A66539745",
