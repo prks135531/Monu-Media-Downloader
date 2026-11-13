@@ -1,0 +1,44 @@
+name: Build Windows installer
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Download FFmpeg
+        shell: powershell
+        run: |
+          Invoke-WebRequest -Uri "https://github.com/aandrew-me/ffmpeg-builds/releases/download/v8/ffmpeg_win64.zip" -OutFile ffmpeg_win64.zip
+          Expand-Archive -Path ffmpeg_win64.zip -DestinationPath .
+          Move-Item -Path .\ffmpeg_win64 -Destination .\ffmpeg
+          Remove-Item ffmpeg_win64.zip
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Windows installer
+        run: npm run windows
+
+      - name: Upload installer files
+        uses: actions/upload-artifact@v4
+        with:
+          name: Monu-Media-Downloader-Windows
+          path: |
+            release/*.exe
+            release/*.msi
+            release/*.zip
+          if-no-files-found: error
+          retention-days: 14
