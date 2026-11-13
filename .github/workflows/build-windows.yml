@@ -27,7 +27,7 @@ jobs:
           Remove-Item ffmpeg_win64.zip
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Windows installer
         run: npm run windows
